@@ -6,6 +6,6 @@ export function useWeather(lat: number | null, lon: number | null) {
     queryKey: ["weather", lat, lon],
     queryFn: () => fetchWeather(lat!, lon!),
     enabled: lat !== null && lon !== null,
-    staleTime: 1000 * 60 * 5, // 5 minutes
+    staleTime: 1000 * 60 * 5,
   });
 }
