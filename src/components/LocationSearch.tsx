@@ -14,18 +14,20 @@ export function LocationSearch({ onLocate }: Props) {
   const [loading, setLoading] = useState(false);
 
   const searchCity = async () => {
-    if (!city.trim()) return;
+    const query = city.trim();
+    if (!query) return;
     setLoading(true);
     try {
       const res = await fetch(
         `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
-          city
+          query
         )}`
       );
       const { results } = await res.json();
       if (results?.length) {
         const { latitude, longitude, name, country } = results[0];
         onLocate(latitude, longitude, `${name}, ${country}`);
+        setCity(''); // ← clear input
       }
     } finally {
       setLoading(false);
@@ -60,19 +62,23 @@ export function LocationSearch({ onLocate }: Props) {
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 justify-center">
       <Input
         placeholder="Enter city"
         value={city}
         onChange={(e) => setCity(e.target.value)}
         onKeyDown={onKeyDown}
+        className='placeholder-gray-700 
+          placeholder:text-lg 
+          placeholder:font-semibold 
+          focus:placeholder-opacity-50'
       />
 
-      <Button onClick={searchCity} disabled={loading}>
+      <Button onClick={searchCity} disabled={loading} className="bg-green-500 hover:bg-green-600 text-gray-800">
         {loading ? <Loader2 className="animate-spin w-5 h-5" /> : 'Search'}
       </Button>
 
-      <Button variant="outline" onClick={useGeolocation} disabled={loading}>
+      <Button onClick={useGeolocation} disabled={loading} className="bg-yellow-400 hover:bg-yellow-500 text-gray-800">
         {loading ? (
           <Loader2 className="animate-spin w-5 h-5" />
         ) : (
