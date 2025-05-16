@@ -137,7 +137,7 @@ export function WeatherCard({ lat, lon, name, onRemove }: Props) {
       {/* Footer with attribution + Remove button */}
       <CardFooter className="flex justify-between items-center">
         <span className="text-xs opacity-70">Powered by Open-Meteo</span>
-        <Button variant="outline" size="sm" onClick={onRemove}>
+        <Button variant="destructive" size="sm" onClick={onRemove}>
           Remove
         </Button>
       </CardFooter>
