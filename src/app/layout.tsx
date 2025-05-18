@@ -33,7 +33,7 @@ export default function RootLayout({
         >
           <Navbar />
           <Providers>
-            <div className='flex-grow pt-26'>
+            <div className='flex-grow pt-22'>
             {children}
             </div>
             </Providers>

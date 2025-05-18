@@ -2,6 +2,33 @@
 
 A responsive, authenticated weather dashboard built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui. It fetches data from the free Open‑Meteo API and allows users to save multiple cities to their dashboard with localStorage persistence and swipe‑to‑delete animations.
 
+---
+
+## Live Demo
+![The Meteo](https://the-meteo.vercel.app/)
+
+---
+
+## Live Demo Disclaimer
+
+Please note that the live demo linked above is intended **only** for development and testing. To keep hosting costs low:
+- New user registrations may be restricted or disabled at any time.
+- Some features may be unstable or unavailable.
+- Use this demo **at your own risk**; do **not** rely on it for production data.
+
+---
+
+## Employer / Hiring Inquiries
+
+If you’re an employer interested in leveraging this project, or if you encounter an issue you’d like me to solve, please reach out!  
+Email me at: **francesco.vurchio82@gmail.com** with:
+1. A brief description of the problem or feature you need, and  
+2. Any relevant deadlines or context.  
+I’ll get back to you as soon as possible.
+
+---
+
+
 ## Tech Stack
 
 * **Next.js 14 (App Router)** with TypeScript
@@ -85,7 +112,3 @@ A responsive, authenticated weather dashboard built with Next.js, TypeScript, Ta
 ## Deployment
 
 Deploy to Vercel for a free, zero‑config experience. Push to GitHub and link your repo in the Vercel dashboard. Environment variables set in Vercel match those in `.env.local`.
-
----
-
-Enjoy your weather dashboard! Feel free to open issues or contribute.
