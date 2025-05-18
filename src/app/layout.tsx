@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
 import { Providers } from '@/components/Providers';
+import Navbar from '@/components/Navbar';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'The Weather App',
+  title: 'The Meteo',
   description: "The only weather app you'll ever need",
 };
 
@@ -28,9 +29,14 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
         >
-          <Providers>{children}</Providers>
+          <Navbar />
+          <Providers>
+            <div className='flex-grow pt-26'>
+            {children}
+            </div>
+            </Providers>
         </body>
       </html>
     </ClerkProvider>
