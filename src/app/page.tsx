@@ -10,9 +10,9 @@ export default function HomePage() {
           <Sun className="w-16 h-16 text-yellow-300 animate-pulse" />
           <CloudRain className="w-16 h-16 text-white animate-bounce" />
         </div>
-        <h1 className="text-5xl font-extrabold">The Weather App</h1>
+        <h1 className="text-5xl font-extrabold">The Meteo</h1>
         <p className="max-w-lg mx-auto text-lg opacity-90">
-          View current weather, forecast, and more for all your favorite cities
+          View current weather, forecast, and more for all your favourite cities
           in one place.
         </p>
         <Link href="/weather">

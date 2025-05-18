@@ -27,7 +27,7 @@ export function LocationSearch({ onLocate }: Props) {
       if (results?.length) {
         const { latitude, longitude, name, country } = results[0];
         onLocate(latitude, longitude, `${name}, ${country}`);
-        setCity(''); // ← clear input
+        setCity('');
       }
     } finally {
       setLoading(false);
@@ -62,7 +62,7 @@ export function LocationSearch({ onLocate }: Props) {
   };
 
   return (
-    <div className="flex gap-2 justify-center">
+    <div className="flex gap-2 justify-center max-w-4xl mx-auto">
       <Input
         placeholder="Enter city"
         value={city}

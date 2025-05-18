@@ -10,7 +10,6 @@ export default function WeatherPage() {
   const [cities, setCities] = useState<City[]>([]);
   const [loaded, setLoaded] = useState(false);
 
-  // 1) Load once on mount
   useEffect(() => {
     const stored = localStorage.getItem("cities");
     if (stored) {
@@ -19,7 +18,6 @@ export default function WeatherPage() {
     setLoaded(true);
   }, []);
 
-  // 2) Save *only after* we’ve loaded from storage
   useEffect(() => {
     if (loaded) {
       localStorage.setItem("cities", JSON.stringify(cities));
@@ -38,7 +36,7 @@ export default function WeatherPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-400 to-indigo-600 p-8 space-y-6">
+    <main className="bg-gradient-to-br from-blue-400 to-indigo-600 p-8 space-y-8 pt-12">
       {/* — HEADER — */}
       <header className="text-center text-white space-y-2">
         <h1 className="text-4xl font-extrabold">Your Weather Dashboard</h1>
