@@ -11,17 +11,17 @@ const Navbar = () => {
         backdrop-blur-lg
         shadow-sm
         transition-colors duration-300">
-      <div className="flex items-center justify-between px-2 md:px-4 py-4">
+      <div className="flex items-center justify-between px-4 py-2">
         <Link href="/" className="flex flex-col items-center">
           <Image
             src={logo}
             alt="Logo"
-            width={50}
-            height={50}
+            width={60}
+            height={60}
             priority
           />
-          <span className="text-lg font-bold text-white">
-            The Weather App
+          <span className="text-md font-bold text-white -mt-2">
+            The Meteo
           </span>
         </Link>
 
@@ -29,7 +29,7 @@ const Navbar = () => {
           <Link href="/weather" passHref>
             <Button 
             variant="link"
-            className="cursor-pointer text-gray-100 hover:text-gray-200"
+            className="cursor-pointer text-white text-md hover:text-gray-200"
             >Dashboard</Button>
           </Link>
 
