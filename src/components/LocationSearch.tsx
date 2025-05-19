@@ -62,29 +62,46 @@ export function LocationSearch({ onLocate }: Props) {
   };
 
   return (
-    <div className="flex gap-2 justify-center max-w-4xl mx-auto">
-      <Input
-        placeholder="Enter city"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-        onKeyDown={onKeyDown}
-        className='placeholder-gray-700 
-          placeholder:text-lg 
-          placeholder:font-semibold 
-          focus:placeholder-opacity-50'
-      />
+    <div className="max-w-4xl mx-auto pb-2">
+      <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
+        {/* Input full-width on mobile, auto on sm+ */}
+        <Input
+          placeholder="Enter city"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          onKeyDown={onKeyDown}
+          className="
+            w-full
+            placeholder-gray-700
+            placeholder:text-lg
+            placeholder:font-semibold
+            focus:placeholder-opacity-50 
+          "
+        />
 
-      <Button onClick={searchCity} disabled={loading} className="bg-green-500 hover:bg-green-600 text-gray-800">
-        {loading ? <Loader2 className="animate-spin w-5 h-5" /> : 'Search'}
-      </Button>
+        {/* Button group always side-by-side */}
+        <div className="flex gap-2 w-full sm:w-auto">
+          <Button
+            onClick={searchCity}
+            disabled={loading}
+            className="bg-green-500 hover:bg-green-600 text-gray-800"
+          >
+            {loading ? <Loader2 className="animate-spin w-5 h-5" /> : 'Search'}
+          </Button>
 
-      <Button onClick={useGeolocation} disabled={loading} className="bg-yellow-400 hover:bg-yellow-500 text-gray-800">
-        {loading ? (
-          <Loader2 className="animate-spin w-5 h-5" />
-        ) : (
-          'Use My Location'
-        )}
-      </Button>
+          <Button
+            onClick={useGeolocation}
+            disabled={loading}
+            className="bg-yellow-400 hover:bg-yellow-500 text-gray-800"
+          >
+            {loading ? (
+              <Loader2 className="animate-spin w-5 h-5" />
+            ) : (
+              'Use My Location'
+            )}
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

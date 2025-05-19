@@ -58,7 +58,7 @@ export function WeatherCard({ lat, lon, name, onRemove }: Props) {
   const CurrentIcon = weatherCodeToIcon(current_weather.weathercode);
 
   return (
-    <Card className="max-w-lg mx-auto space-y-4 p-4 mt-4">
+    <Card className="max-w-lg mx-auto space-y-4 p-4 mt-4 mb-10">
       {/* Header with date, sunrise/sunset */}
       <CardHeader className="flex items-center justify-between">
         <div>
@@ -102,7 +102,7 @@ export function WeatherCard({ lat, lon, name, onRemove }: Props) {
         </div>
 
         {/* 7-day grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
           {daily.time.map((day, i) => {
             const Icon = weatherCodeToIcon(daily.weathercode[i]);
             return (

@@ -36,7 +36,7 @@ export default function WeatherPage() {
   };
 
   return (
-    <main className="bg-gradient-to-br from-blue-400 to-indigo-600 p-8 space-y-8 pt-12">
+    <main className="min-h-screen bg-gradient-to-br from-blue-400 to-indigo-600 p-8 space-y-8 pt-12">
       {/* — HEADER — */}
       <header className="text-center text-white space-y-2">
         <h1 className="text-4xl font-extrabold">Your Weather Dashboard</h1>
