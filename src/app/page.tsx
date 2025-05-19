@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-400 to-indigo-600 flex flex-col items-center justify-center text-white text-center p-6">
+    <main className="min-h-screen bg-gradient-to-br from-blue-400 to-indigo-600 flex flex-col items-center justify-start pt-24 text-white text-center px-6">
       <div className="space-y-6">
         <div className="flex flex-col items-center mx-auto max-w-7xl px-6 lg:px-8 mb-20">
   <div className="mx-auto max-w-2xl text-center space-y-6 px-6 lg:px-8">
